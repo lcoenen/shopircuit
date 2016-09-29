@@ -18,3 +18,4 @@ important : if you prefer light blue over dark orange (if that exists) and that 
 are proposed in the shop, he'll choose light blue. If there's none of your favorite
 colors, he'll just take the first variant.
 
+[https://youtu.be/0tcDXJfAFVw]
