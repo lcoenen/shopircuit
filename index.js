@@ -64,11 +64,15 @@ function computePrice(object){
     
     if(item.product_type == 'Watch' || item.product_type == 'Clock'){
     
+      console.log('Object found: ', item.title)
+    
       preferedVariant = findPreferedVariant(item.variants) == undefined? item.variants[0]: preferedVariant;
       
-      console.log('preferedVariant', preferedVariant)
+      console.log('Object color: ', preferedVariant.title)
+      console.log('Object price: ', preferedVariant.price,'$')
       
       totalPrice += Number(preferedVariant.price);
+      
     
     }
     
@@ -84,7 +88,7 @@ function computePrice(object){
 */
 function computePage(page, cb, totalPrice){
 
-    console.log('scraping page', page);
+    console.log('Scraping page', page);
 
     http.get(sprintf(URL, page), function(request){
       
@@ -100,11 +104,9 @@ function computePage(page, cb, totalPrice){
       
         response = JSON.parse(body);
         
-        if(!response.products.length) return cb(totalPrice)
+        if(!response.products.length) return cb(totalPrice);
         
         var thisPrice = Number(computePrice(response.products));
-        
-        console.log('Object ', thisPrice)
         
         computePage(++page, cb, totalPrice + thisPrice);
         
@@ -117,4 +119,7 @@ function computePage(page, cb, totalPrice){
 /*
   Starting point
 */
-computePage(1, function(total){ console.log('Total', total)}, 0);
+computePage(1, function(total){ 
+  console.log('Amount needed to be always on time: ', total, '$');
+  console.log('https://youtu.be/0tcDXJfAFVw')
+}, 0);
