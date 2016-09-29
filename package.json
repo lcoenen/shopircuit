@@ -1,0 +1,22 @@
+{
+  "name": "shopircuit",
+  "version": "1.0.0",
+  "description": "Find the ammount needed to be always on time",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No tests, sorry\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lcoenen/shopircuit.git"
+  },
+  "author": "Loïc Coenen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lcoenen/shopircuit/issues"
+  },
+  "homepage": "https://github.com/lcoenen/shopircuit#readme",
+  "dependencies": {
+    "sprintf": "^0.1.5"
+  }
+}
